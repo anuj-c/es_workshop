@@ -22,7 +22,7 @@
         <span class="input-group-text rounded-start" id="basic-addon1"><i class="fa fa-calendar-day" aria-hidden="true"></i></span>
         <input type="text" class="form-control" name="todo" id="todo" aria-describedby="helpId" placeholder="Add new...">
       </div>
-      <input name="add" id="add" class="col-auto btn btn-primary" type="button" value="Add">
+      <input name="add" id="add" class="col-auto btn btn-primary" type="button" value="Add" onclick="addTodo()">
     </div>
     <!-- filter -->
     <div class="filter d-flex justify-content-end mb-3">
@@ -35,7 +35,6 @@
       <label for="sort" class="me-2">Sort</label>
       <select class="rounded me-2" name="sort" id="sort">
         <option selected>By added date</option>
-        <option>By due date</option>
       </select>
       <button class="badge bg-primary mb-0 px-1 desc" onclick="descButton(this)"><i class="fa fa-sort-amount-down-alt" aria-hidden="true"></i></button>
       <button class="badge bg-primary mb-0 px-1 asc d-none" onclick="descButton(this)"><i class="fa fa-sort-amount-down" aria-hidden="true"></i></button>
@@ -51,9 +50,9 @@
           <input type="text" class="d-none editInput" value="Building the workshop website" />
         </div>
         <div>
-          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit" onclick="deleteTodo(this)"><i class="fa fa-trash" aria-hidden="true"></i></button>
           <button class="me-2 d-none btn badge btn-warning mb-0 px-1 float-end edit" onclick="editTodo(this)"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>
-          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save"><i class="fa fa-save" aria-hidden="true"></i></button>
+          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save" onclick="saveTodo(this)"><i class="fa fa-save" aria-hidden="true"></i></button>
         </div>
       </div>
       <!-- todo2 -->
@@ -65,9 +64,9 @@
           <input type="text" class="d-none editInput" value="Playing Minecraft" />
         </div>
         <div>
-          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit" onclick="deleteTodo(this)"><i class="fa fa-trash" aria-hidden="true"></i></button>
           <button class="me-2 d-none btn badge btn-warning mb-0 px-1 float-end edit" onclick="editTodo(this)"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>
-          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save"><i class="fa fa-save" aria-hidden="true"></i></button>
+          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save" onclick="saveTodo(this)"><i class="fa fa-save" aria-hidden="true"></i></button>
         </div>
       </div>
       <!-- todo3 -->
@@ -79,9 +78,9 @@
           <input type="text" class="d-none editInput" value="Playing football" />
         </div>
         <div>
-          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button class="d-none btn badge btn-danger mb-0 px-1 float-end edit" onclick="deleteTodo(this)"><i class="fa fa-trash" aria-hidden="true"></i></button>
           <button class="me-2 d-none btn badge btn-warning mb-0 px-1 float-end edit" onclick="editTodo(this)"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>
-          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save"><i class="fa fa-save" aria-hidden="true"></i></button>
+          <button class="me-2 d-none btn badge btn-success mb-0 px-1 float-end save" onclick="saveTodo(this)"><i class="fa fa-save" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
