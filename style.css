@@ -1,0 +1,12 @@
+.list div i{
+  cursor: pointer;
+}
+.list div:hover{
+  color: rgb(28, 141, 235);
+}
+.list div:hover .edit{
+  display: block !important;
+}
+.list{
+  width: 70%;
+}
