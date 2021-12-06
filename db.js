@@ -11,7 +11,7 @@ const renderTasks = (val) =>{
 }
 renderTasks(show)
 
-const createTodo = (task) => {
+const createTask = (task) => {
   let temp = {id:`${data.length+1}`, task, type: false }
   data.push(temp);
   show.push(temp);
@@ -26,13 +26,26 @@ const reverseTasks = () => {
   renderTasks(show)
 }
 
-const updateList = (e) => {
-  toggle(e)
+const updateTasks = (e) => {
   let id = e.nextElementSibling.getAttribute("id")
   const pos = data.findIndex(el => el.id==id)
   data[pos].type = !(data[pos].type)
   
-  console.log(show)
   console.log(data)
 }
 
+const deleteTask = (e) => {
+  let par = e.parentElement.previousElementSibling
+  const id = par.querySelector(".title").getAttribute("id")
+  const pos = data.findIndex(el => el.id==id)
+  data.splice(pos,1)
+  console.log(data)
+}
+
+const saveTask = (e) => {
+  let par = e.parentElement.previousElementSibling
+  const id = par.querySelector(".title").getAttribute("id")
+  const pos = data.findIndex(el => el.id==id)
+  data[pos].task = par.querySelector(".editInput").value;
+  console.log(data)
+}

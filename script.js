@@ -14,6 +14,7 @@ const toggle = (e) => {
     task.remove();
     document.querySelector(".list").prepend(task);
   }
+  updateTasks(e)
 };
 
 const editTodo = (e) => {
@@ -24,6 +25,15 @@ const editTodo = (e) => {
 };
 
 const saveTodo = (e) => {
+
+  // TODO
+  
+  // copy the changed input value to span with class title
+  // hide the input field
+  // show the span.title
+
+  saveTask(e)
+  
   let parent = e.parentElement.previousElementSibling;
   parent.querySelector(".title").innerText =
     parent.querySelector(".editInput").value;
@@ -33,27 +43,22 @@ const saveTodo = (e) => {
 };
 
 const deleteTodo = (e) => {
+  deleteTask(e)
   e.parentElement.parentElement.remove();
-};
-
-const setter = (ele, attr) => {
-  for (var key in attr) {
-    ele.setAttribute(key, attr[key]);
-  }
 };
 
 const addTodo = (task) => {
   // console.log(task);
 
   let div = document.createElement("DIV");
-  setter(div, { class: "task fs-4 my-2 d-flex justify-content-between" });
+  div.setAttribute("class","task fs-4 my-2 d-flex justify-content-between")
   div.innerHTML = `<div class="d-flex align-items-center" style="position: relative">\
     <span class="checked${
       !task.type ? ' d-none"' : '"'
     }" style=" position: absolute; height: 1.3em; width: 1.3em; left: 0.2em; bottom: 0.3em;">\
       <img src="images/check.png" alt="Marked Complete" height="100%" style="position: absolute"/>\
     </span>\
-    <span onclick="updateList(this)" class="unchecked" style="position: relative; height: 1.3em; width: 1.3em">\
+    <span onclick="toggle(this)" class="unchecked" style="position: relative; height: 1.3em; width: 1.3em">\
       <img src="images/checkbox.png" alt="Marked Due" height="100%" style="position: absolute; left: 0"/>\
     </span>\
     <span class="title ms-3${
@@ -104,7 +109,14 @@ const toggleOrder = (e) => {
 
   // If ascending button is clicked then descending button should be shown and asc. should be hidden
   // we can use bootstrap class "d-none" to hide an element
+  if(e.classList.contains("desc")){
+    e.nextElementSibling.classList.remove("d-none")
+    e.classList.add("d-none")
+  }else{
+    e.previousElementSibling.classList.remove("d-none")
+    e.classList.add("d-none")
+  }
 
-  // reverseTasks()
+  reverseTasks()
 };
 
