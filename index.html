@@ -68,19 +68,15 @@
           <option>Completed</option>
           <option>Due</option>
         </select>
-        <label for="sort" class="me-2">Sort</label>
-        <select class="rounded me-2" name="sort" id="sort">
-          <option selected>By added date</option>
-        </select>
         <button
           class="badge bg-primary mb-0 px-1 desc"
-          onclick="descButton(this)"
+          onclick="toggleOrder(this)"
         >
           <i class="fa fa-sort-amount-down-alt" aria-hidden="true"></i>
         </button>
         <button
           class="badge bg-primary mb-0 px-1 asc d-none"
-          onclick="descButton(this)"
+          onclick="toggleOrder(this)"
         >
           <i class="fa fa-sort-amount-down" aria-hidden="true"></i>
         </button>

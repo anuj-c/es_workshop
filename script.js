@@ -16,16 +16,6 @@ const toggle = (e) => {
   }
 };
 
-const descButton = (e) => {
-  if (e.classList.contains("desc")) {
-    e.nextElementSibling.classList.remove("d-none");
-    e.classList.add("d-none");
-  } else {
-    e.previousElementSibling.classList.remove("d-none");
-    e.classList.add("d-none");
-  }
-};
-
 const editTodo = (e) => {
   e.nextElementSibling.classList.remove("d-none");
   let parent = e.parentElement.previousElementSibling;
@@ -53,7 +43,7 @@ const setter = (ele, attr) => {
 };
 
 const addTodo = (task) => {
-  console.log(task);
+  // console.log(task);
 
   let div = document.createElement("DIV");
   setter(div, { class: "task fs-4 my-2 d-flex justify-content-between" });
@@ -63,12 +53,12 @@ const addTodo = (task) => {
     }" style=" position: absolute; height: 1.3em; width: 1.3em; left: 0.2em; bottom: 0.3em;">\
       <img src="images/check.png" alt="Marked Complete" height="100%" style="position: absolute"/>\
     </span>\
-    <span onclick="toggle(this)" class="unchecked" style="position: relative; height: 1.3em; width: 1.3em">\
+    <span onclick="updateList(this)" class="unchecked" style="position: relative; height: 1.3em; width: 1.3em">\
       <img src="images/checkbox.png" alt="Marked Due" height="100%" style="position: absolute; left: 0"/>\
     </span>\
     <span class="title ms-3${
       task.type ? ' text-decoration-line-through"' : '"'
-    }">${task.task}</span>\
+    }" id = "${task.id}">${task.task}</span>\
     <input type="text" class="d-none editInput" value="${task.task}"/>\
   </div>\
   <div>\
@@ -108,3 +98,13 @@ document
         document.getElementById("add-task-input").value == "";
     }
   });
+
+const toggleOrder = (e) => {
+  // TODO
+
+  // If ascending button is clicked then descending button should be shown and asc. should be hidden
+  // we can use bootstrap class "d-none" to hide an element
+
+  // reverseTasks()
+};
+
