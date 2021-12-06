@@ -69,4 +69,5 @@ const addTodo = (val) => {
     </button>\
   </div>`
   document.querySelector(".list").appendChild(div)
+  document.getElementById("todo").value = ""
 };
