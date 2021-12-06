@@ -1,3 +1,7 @@
+body{
+  background: rgb(33, 191, 253);
+}
+
 span{
   cursor: default;
 }

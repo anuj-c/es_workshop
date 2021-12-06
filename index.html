@@ -57,7 +57,7 @@
           class="col-auto btn btn-primary"
           type="button"
           value="Add"
-          onclick="addTodo()"
+          onclick="addTodo(this.previousElementSibling.querySelector('input').value)"
         />
       </div>
       <!-- filter -->
@@ -89,14 +89,33 @@
       <div class="list">
         <!-- todo1 -->
         <div class="task fs-4 my-2 d-flex justify-content-between">
-          <div>
-            <span onclick="toggle(this)" class="checked"
-              ><i class="fa fa-check-square me-2" aria-hidden="true"></i
-            ></span>
-            <span onclick="toggle(this)" class="unchecked d-none"
-              ><i class="fa fa-square me-2" aria-hidden="true"></i
-            ></span>
-            <span class="title text-decoration-line-through"
+          <div class="d-flex align-items-center" style="position: relative">
+            <span
+              class="checked"
+              style="
+                position: absolute;
+                height: 1.3em;
+                width: 1.3em;
+                left: 0.2em;
+                bottom: 0.3em;
+              "
+              ><img
+                src="images/check.png"
+                alt="Marked Complete"
+                height="100%"
+                style="position: absolute"
+            /></span>
+            <span
+              onclick="toggle(this)"
+              class="unchecked"
+              style="position: relative; height: 1.3em; width: 1.3em"
+              ><img
+                src="images/checkbox.png"
+                alt="Marked Due"
+                height="100%"
+                style="position: absolute; left: 0"
+            /></span>
+            <span class="title text-decoration-line-through ms-3"
               >Building the workshop website</span
             >
             <input
@@ -128,18 +147,37 @@
         </div>
         <!-- todo2 -->
         <div class="task fs-4 my-2 d-flex justify-content-between">
-          <div>
-            <span onclick="toggle(this)" class="checked d-none"
-              ><i class="fa fa-check-square me-2" aria-hidden="true"></i
-            ></span>
-            <span onclick="toggle(this)" class="unchecked"
-              ><i class="fa fa-square me-2" aria-hidden="true"></i
-            ></span>
-            <span class="title">Playing Minecraft</span>
+          <div class="d-flex align-items-center" style="position: relative">
+            <span
+              class="checked d-none"
+              style="
+                position: absolute;
+                height: 1.3em;
+                width: 1.3em;
+                left: 0.2em;
+                bottom: 0.3em;
+              "
+              ><img
+                src="images/check.png"
+                alt="Marked Complete"
+                height="100%"
+                style="position: absolute"
+            /></span>
+            <span
+              onclick="toggle(this)"
+              class="unchecked"
+              style="position: relative; height: 1.3em; width: 1.3em"
+              ><img
+                src="images/checkbox.png"
+                alt="Marked Due"
+                height="100%"
+                style="position: absolute; left: 0"
+            /></span>
+            <span class="title ms-3">Booking train ticket</span>
             <input
               type="text"
               class="d-none editInput"
-              value="Playing Minecraft"
+              value="Booking train ticket"
             />
           </div>
           <div>
@@ -165,18 +203,37 @@
         </div>
         <!-- todo3 -->
         <div class="task fs-4 my-2 d-flex justify-content-between">
-          <div>
-            <span onclick="toggle(this)" class="checked d-none"
-              ><i class="fa fa-check-square me-2" aria-hidden="true"></i
-            ></span>
-            <span onclick="toggle(this)" class="unchecked"
-              ><i class="fa fa-square me-2" aria-hidden="true"></i
-            ></span>
-            <span class="title">Playing football</span>
+          <div class="d-flex align-items-center" style="position: relative">
+            <span
+              class="checked d-none"
+              style="
+                position: absolute;
+                height: 1.3em;
+                width: 1.3em;
+                left: 0.2em;
+                bottom: 0.3em;
+              "
+              ><img
+                src="images/check.png"
+                alt="Marked Complete"
+                height="100%"
+                style="position: absolute"
+            /></span>
+            <span
+              onclick="toggle(this)"
+              class="unchecked"
+              style="position: relative; height: 1.3em; width: 1.3em"
+              ><img
+                src="images/checkbox.png"
+                alt="Marked Due"
+                height="100%"
+                style="position: absolute; left: 0"
+            /></span>
+            <span class="title ms-3">Playing Minecraft</span>
             <input
               type="text"
               class="d-none editInput"
-              value="Playing football"
+              value="Playing Minecraft"
             />
           </div>
           <div>
